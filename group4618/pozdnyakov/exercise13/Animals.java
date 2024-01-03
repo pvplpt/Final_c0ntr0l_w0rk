@@ -52,4 +52,9 @@ public class Animals {
         long diffMsec = curDate.getTime() - this.birthday.getTime();
         return (int) (diffMsec / (24 * 60 * 60 * 1000));
     }
+
+    @Override
+    public String toString() {
+        return "Animals [name=" + name + ", birthday=" + birthday + ", commands=" + commands + "]";
+    }
 }
