@@ -22,6 +22,10 @@ public class Main {
 
         printListCommandsAnimal(animal);
 
+        addNewCommandsAnimal(animal);
+
+        System.out.println(petRegistry);
+
     }
 
     private static Animals newAnimal() {
@@ -105,5 +109,16 @@ public class Main {
         System.out.println("\nCписок команд, которое выполняет " + animal.getName());
         System.out.println(animal.getCommands());
         System.out.println();
+    }
+
+    private static void addNewCommandsAnimal(Animals animal) {
+
+        ArrayList<String> commandsAnimal = animal.getCommands();
+        String answer = MyUtilities.inputString("Команды животного будете вводить (y/n)? ");
+        while (answer.equals("y")) {
+            commandsAnimal.add(MyUtilities.inputString("Введите команду животного:"));
+            answer = MyUtilities.inputString("Еще команды животного будете вводить (y/n)? ");
+        }
+        animal.setCommands(commandsAnimal);
     }
 }
