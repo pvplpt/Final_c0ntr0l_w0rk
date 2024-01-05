@@ -11,20 +11,60 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Animals animal = newAnimal();
-        petRegistry.addAnimal(animal);
+        Animals animal = null;
+        boolean flag = true;
+        while (flag) {
+            System.out.println("\n\n===============================================================================");
+            System.out.println("1. Завести новое животное");
+            System.out.println("2. Определять животное в правильный класс");
+            System.out.println("3. Увидеть список команд, которое выполняет животное");
+            System.out.println("4. Обучить животное новым командам");
+            System.out.println("5. Посмотреть реестр животных");
+            System.out.println("6. Завершение работы приложения");
+            System.out.println("===============================================================================");
+            int num = MyUtilities.inputNaturelNumber("Введите номер меню: ");
 
-        System.out.println(petRegistry);
+            switch (num) {
+                case 1:
+                    animal = newAnimal();
+                    petRegistry.addAnimal(animal);
+                    break;
+                case 2:
+                    if (animal == null) {
+                        System.out.println("\nЗаведите новое животное.");
+                    } else {
+                        assignClassAnimal(animal);
+                    }
+                    break;
+                case 3:
+                    if (animal == null) {
+                        System.out.println("\nЗаведите новое животное.");
+                    } else {
+                        printListCommandsAnimal(animal);
+                    }
+                    break;
+                case 4:
+                    if (animal == null) {
+                        System.out.println("\nЗаведите новое животное.");
+                    } else {
+                        addNewCommandsAnimal(animal);
+                    }
+                    break;
+                case 5:
+                    System.out.println(petRegistry);
+                    break;
+                case 6:
+                    flag = false;
+                    System.out.println("\nДо новых встреч!");
+                    System.out.println("Завершение работы приложения.");
+                    break;
 
-        assignClassAnimal(animal);
+                default:
+                    System.out.println("\nМеню с таким номером не было.");
+                    break;
+            }
 
-        System.out.println(petRegistry);
-
-        printListCommandsAnimal(animal);
-
-        addNewCommandsAnimal(animal);
-
-        System.out.println(petRegistry);
+        }
 
     }
 
