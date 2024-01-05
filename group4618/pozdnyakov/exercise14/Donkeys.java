@@ -7,7 +7,11 @@ public class Donkeys extends PackAnimals {
 
     public Donkeys(String name, Date birthday, ArrayList<String> commands) {
         super(name, birthday, commands);
-        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public String toString() {
+        return "Donkeys [name=" + getName() + ", birthday=" + getBirthday() + ", commands=" + getCommands() + "]";
     }
 
 }

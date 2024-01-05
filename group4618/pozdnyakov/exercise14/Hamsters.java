@@ -7,7 +7,11 @@ public class Hamsters extends Pets {
 
     public Hamsters(String name, Date birthday, ArrayList<String> commands) {
         super(name, birthday, commands);
-        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public String toString() {
+        return "Hamsters [name=" + getName() + ", birthday=" + getBirthday() + ", commands=" + getCommands() + "]";
     }
 
 }

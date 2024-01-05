@@ -7,7 +7,11 @@ public class Camels extends PackAnimals {
 
     public Camels(String name, Date birthday, ArrayList<String> commands) {
         super(name, birthday, commands);
-        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public String toString() {
+        return "Camels [name=" + getName() + ", birthday=" + getBirthday() + ", commands=" + getCommands() + "]";
     }
 
 }
