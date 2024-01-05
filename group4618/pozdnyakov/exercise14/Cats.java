@@ -1,11 +1,11 @@
-package group4618.pozdnyakov.exercise13;
+package group4618.pozdnyakov.exercise14;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Pets extends Animals {
+public class Cats extends Pets {
 
-    public Pets(String name, Date birthday, ArrayList<String> commands) {
+    public Cats(String name, Date birthday, ArrayList<String> commands) {
         super(name, birthday, commands);
         // TODO Auto-generated constructor stub
     }
