@@ -20,6 +20,8 @@ public class Main {
 
         System.out.println(petRegistry);
 
+        printListCommandsAnimal(animal);
+
     }
 
     private static Animals newAnimal() {
@@ -97,5 +99,11 @@ public class Main {
                 System.out.println("\nКласс животного не определили.");
                 break;
         }
+    }
+
+    private static void printListCommandsAnimal(Animals animal) {
+        System.out.println("\nCписок команд, которое выполняет " + animal.getName());
+        System.out.println(animal.getCommands());
+        System.out.println();
     }
 }
