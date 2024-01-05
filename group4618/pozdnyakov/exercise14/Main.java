@@ -14,7 +14,11 @@ public class Main {
         Animals animal = newAnimal();
         petRegistry.addAnimal(animal);
 
-        System.out.println(petRegistry.getListAnimals());
+        System.out.println(petRegistry);
+
+        assignClassAnimal(animal);
+
+        System.out.println(petRegistry);
 
     }
 
@@ -37,5 +41,61 @@ public class Main {
         }
 
         return new Animals(nameAnimal, dateBirthday, commandsAnimal);
+    }
+
+    private static void assignClassAnimal(Animals animal) {
+
+        System.out.println("\n1. Собаки");
+        System.out.println("2. Кошки");
+        System.out.println("3. Хомяки");
+        System.out.println("4. Лошади");
+        System.out.println("5. Верблюды");
+        System.out.println("6. Ослы");
+        int num = MyUtilities.inputNaturelNumber("Введите номер класса: ");
+
+        switch (num) {
+            case 1:
+                Pets petAnimalDog = new Pets(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addPet(petAnimalDog);
+                Dogs dogAnimal = new Dogs(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addDog(dogAnimal);
+                break;
+            case 2:
+                Pets petAnimalCat = new Pets(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addPet(petAnimalCat);
+                Cats catAnimal = new Cats(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addCat(catAnimal);
+                break;
+            case 3:
+                Pets petAnimalHamster = new Pets(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addPet(petAnimalHamster);
+                Hamsters hamsterAnimal = new Hamsters(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addHamster(hamsterAnimal);
+                break;
+            case 4:
+                PackAnimals packAnimalHorse = new PackAnimals(animal.getName(), animal.getBirthday(),
+                        animal.getCommands());
+                petRegistry.addPackAnimal(packAnimalHorse);
+                Horses horseAnimal = new Horses(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addHorse(horseAnimal);
+                break;
+            case 5:
+                PackAnimals packAnimalCamel = new PackAnimals(animal.getName(), animal.getBirthday(),
+                        animal.getCommands());
+                petRegistry.addPackAnimal(packAnimalCamel);
+                Camels camelAnimal = new Camels(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addCamel(camelAnimal);
+                break;
+            case 6:
+                PackAnimals packAnimalDonkey = new PackAnimals(animal.getName(), animal.getBirthday(),
+                        animal.getCommands());
+                petRegistry.addPackAnimal(packAnimalDonkey);
+                Donkeys donkeyAnimal = new Donkeys(animal.getName(), animal.getBirthday(), animal.getCommands());
+                petRegistry.addDonkey(donkeyAnimal);
+                break;
+            default:
+                System.out.println("\nКласс животного не определили.");
+                break;
+        }
     }
 }

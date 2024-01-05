@@ -3,6 +3,7 @@ package group4618.pozdnyakov.exercise14;
 import java.util.ArrayList;
 
 public class PetRegistry {
+
     private ArrayList<Animals> listAnimals = new ArrayList<>();
     private ArrayList<Pets> listPets = new ArrayList<>();
     private ArrayList<PackAnimals> listPackAnimals = new ArrayList<>();
@@ -83,5 +84,13 @@ public class PetRegistry {
 
     public ArrayList<Donkeys> getListDonkeys() {
         return listDonkeys;
+    }
+
+    @Override
+    public String toString() {
+        return "PetRegistry [\n Animals=" + listAnimals + ",\n Pets=" + listPets + ",\n PackAnimals="
+                + listPackAnimals + ",\n Dogs=" + listDogs + ",\n Cats=" + listCats + ",\n Hamsters="
+                + listHamsters + ",\n Horses=" + listHorses + ",\n Camels=" + listCamels + ",\n Donkeys="
+                + listDonkeys + "\n]\n";
     }
 }

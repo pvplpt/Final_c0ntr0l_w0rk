@@ -7,7 +7,11 @@ public class Pets extends Animals {
 
     public Pets(String name, Date birthday, ArrayList<String> commands) {
         super(name, birthday, commands);
-        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public String toString() {
+        return "Pets [name=" + getName() + ", birthday=" + getBirthday() + ", commands=" + getCommands() + "]";
     }
 
 }
